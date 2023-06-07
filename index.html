@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<table>
+   <thead>
+      <td>
+        id
+      <td>
+      <td>
+        name
+      <td>
+      <td>
+        email
+      <td>
+   <thead>
+   <tbody>
+      <tr>
+          <td>1</td>
+          <td>Vishnu</td>
+          <td>vishnu@test.com</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Dinesh</td>
+          <td>dinesh@test.com</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Indu</td>
+          <td>indu@test.com</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>Vishnu</td>
+          <td>vishnu@test.com</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>Dinesh</td>
+          <td>dinesh@test.com</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>Indu</td>
+          <td>indu@test.com</td>
+      </tr>
+   </tbody>
+</table>
+<div>
+   <button>
+     Prev
+   </button>
+   <button>
+     Next
+   </button>        
+</div>
+<script>
+
+let datas = [{
+    "id": "7",
+    "name": "Carolina White",
+    "email": "Royal50@hotmail.com"
+  },
+  {
+    "id": "8",
+    "name": "Alfredo Conn",
+    "email": "Clarabelle34@hotmail.com"
+  },
+  {
+    "id": "9",
+    "name": "Stan Shanahan",
+    "email": "Lamar.McClure@hotmail.com"
+  },
+  {
+    "id": "10",
+    "name": "Marvin Fay",
+    "email": "Osbaldo58@hotmail.com"
+  },
+  {
+    "id": "11",
+    "name": "Torrance Rau",
+    "email": "Orin45@gmail.com"
+  },
+  {
+    "id": "12",
+    "name": "Harold Gutmann MD",
+    "email": "Alyce.Stracke37@yahoo.com"
+  },
+  {
+    "id": "7",
+    "name": "Carolina White",
+    "email": "Royal50@hotmail.com"
+  },
+  {
+    "id": "8",
+    "name": "Alfredo Conn",
+    "email": "Clarabelle34@hotmail.com"
+  },
+  {
+    "id": "9",
+    "name": "Stan Shanahan",
+    "email": "Lamar.McClure@hotmail.com"
+  },
+  {
+    "id": "10",
+    "name": "Marvin Fay",
+    "email": "Osbaldo58@hotmail.com"
+  },
+];
+
+function generateButton(data = []) {
+  let buttons = [];
+  let prev = `<button id='prev'>
+     Prev
+   </button>`;
+  let next = `<button id='next'>
+     Next
+   </button>`;
+  buttons.push(prev)
+  for (let i = 0; i < data.length / 6; i++) {
+    let buttonTemplate = `<button id=${i + 1}>
+    ${i+1}
+   </button>`;
+    buttons.push(buttonTemplate);
+  }
+  buttons.push(next)
+  return buttons;
+}
+
+
+const dataTable = document.getElementById('data-table');
+dataTable.innerHTML = table;
+
+const pagination = document.getElementById('pagination');
+pagination.innerHTML = generateButton(datas);
+</script>
+
+</body>
+</html>
